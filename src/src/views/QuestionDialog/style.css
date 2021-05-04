@@ -1,0 +1,17 @@
+.QuestionDialog_area {
+    display: grid;
+    grid-template-rows: 320px auto;
+}
+
+.QuestionDialog_preview {
+    margin-top: -40px;
+}
+
+.QuestionDialog_answers {
+    padding: 0px 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 50px;
+    grid-template-rows: auto auto;
+    grid-row-gap: 20px;
+}
