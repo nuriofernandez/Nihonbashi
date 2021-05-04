@@ -1,17 +1,12 @@
-import BoxArea from './components/BoxArea'
-import Button from './components/Button'
-
 import './App.css';
-import Preview from './components/Preview';
+
+import RomanjiToHiragana from './pages/romanji-to-hiragana';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BoxArea>
-          <Preview>つ</Preview>
-          <Button>tsu</Button>
-        </BoxArea>
+        <RomanjiToHiragana />
       </header>
     </div>
   );
