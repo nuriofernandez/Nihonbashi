@@ -18,7 +18,7 @@ class RomanjiToHiragana extends Component {
     };
 
     handleAnswer(answerId) {
-        const correct = characters[Maths.randomNumberBetween(0, 20)];
+        const correct = characters[Maths.randomNumberBetween(0, characters.length - 1)];
         this.setState({
             correct: correct,
             answers: this.generateAnswers(correct)
@@ -28,9 +28,9 @@ class RomanjiToHiragana extends Component {
     generateAnswers(correctAnswer) {
         return [
             correctAnswer,
-            characters[Maths.randomNumberBetween(0, 20)],
-            characters[Maths.randomNumberBetween(0, 20)],
-            characters[Maths.randomNumberBetween(0, 20)]
+            characters[Maths.randomNumberBetween(0, characters.length - 1)],
+            characters[Maths.randomNumberBetween(0, characters.length - 1)],
+            characters[Maths.randomNumberBetween(0, characters.length - 1)]
         ].sort(() => .5 - Math.random());
     }
 
