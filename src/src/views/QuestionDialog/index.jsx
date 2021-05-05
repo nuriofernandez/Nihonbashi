@@ -8,47 +8,20 @@ import "./style.css"
 
 class QuestionDialog extends Component {
 
-    state = {
-        correct: "...",
-        answers: ["...", "...", "...", "..."]
-    };
-
-    constructor(props) {
-        super(props);
-
-        // TODO use something like a map for this.
-        this.state = {
-            correct: "つ",
-            answers: ["tsu", "ku", "shi", "go"]
-        }
-    }
-
-    handleAnswer(answerId) {
-        const answer = this.state.answers[answerId];
-        const { correct } = this.state;
-
-        const { handleFail, handleCorrect } = this.props;
-
-        if (answer !== correct) {
-            handleFail();
-            return;
-        }
-
-        handleCorrect();
-    }
-
     render() {
+        const { answers, correct, handleAnswer } = this.props;
+
         return (
             <BoxArea>
                 <div className="QuestionDialog_area">
                     <div className="QuestionDialog_preview">
-                        <Preview>{this.state.correct}</Preview>
+                        <Preview>{correct}</Preview>
                     </div>
                     <div className="QuestionDialog_answers">
-                        <Button onClick={() => this.handleAnswer(0)}>{this.state.answers[0]}</Button>
-                        <Button onClick={() => this.handleAnswer(1)}>{this.state.answers[1]}</Button>
-                        <Button onClick={() => this.handleAnswer(2)}>{this.state.answers[2]}</Button>
-                        <Button onClick={() => this.handleAnswer(3)}>{this.state.answers[3]}</Button>
+                        <Button onClick={() => handleAnswer(0)}>{answers[0]}</Button>
+                        <Button onClick={() => handleAnswer(1)}>{answers[1]}</Button>
+                        <Button onClick={() => handleAnswer(2)}>{answers[2]}</Button>
+                        <Button onClick={() => handleAnswer(3)}>{answers[3]}</Button>
                     </div>
                 </div>
             </BoxArea>
