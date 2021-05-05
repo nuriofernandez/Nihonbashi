@@ -27,20 +27,14 @@ class QuestionDialog extends Component {
         const answer = this.state.answers[answerId];
         const { correct } = this.state;
 
+        const { handleFail, handleCorrect } = this.props;
+
         if (answer !== correct) {
-            this.handleFail();
+            handleFail();
             return;
         }
 
-        this.handleCorrect();
-    }
-
-    handleFail() {
-        alert("NO!");
-    }
-
-    handleCorrect() {
-        alert("YESHHH");
+        handleCorrect();
     }
 
     render() {
