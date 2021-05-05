@@ -31,7 +31,7 @@ class RomanjiToHiragana extends Component {
             characters[Maths.randomNumberBetween(0, 20)],
             characters[Maths.randomNumberBetween(0, 20)],
             characters[Maths.randomNumberBetween(0, 20)]
-        ]
+        ].sort(() => .5 - Math.random());
     }
 
     handleFail() {
