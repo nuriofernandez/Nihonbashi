@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import CharactersDatabase from './characters-database'
 import QuestionDialog from '../../views/QuestionDialog'
 
 class RomanjiToHiragana extends Component {
