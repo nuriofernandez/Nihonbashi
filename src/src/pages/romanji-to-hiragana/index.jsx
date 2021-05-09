@@ -1,37 +1,44 @@
 import React, { Component } from 'react'
 
-import Maths from '../../utils/Maths'
-
-import { characters } from './characters-database'
 import QuestionDialog from '../../views/QuestionDialog'
+
+import CharacterGenerator from './generator'
 
 class RomanjiToHiragana extends Component {
 
     state = {
-        correct: characters[0],
+        correct: { hiragana: "...", romanji: "..." },
         answers: [
-            characters[0],
-            characters[1],
-            characters[2],
-            characters[3]
+            { hiragana: "...", romanji: "..." },
+            { hiragana: "...", romanji: "..." },
+            { hiragana: "...", romanji: "..." },
+            { hiragana: "...", romanji: "..." }
         ]
     };
 
-    handleAnswer(answerId) {
-        const correct = characters[Maths.randomNumberBetween(0, characters.length - 1)];
-        this.setState({
-            correct: correct,
-            answers: this.generateAnswers(correct)
-        })
+    componentDidMount() {
+        this.regenerate();
     }
 
-    generateAnswers(correctAnswer) {
-        return [
-            correctAnswer,
-            characters[Maths.randomNumberBetween(0, characters.length - 1)],
-            characters[Maths.randomNumberBetween(0, characters.length - 1)],
-            characters[Maths.randomNumberBetween(0, characters.length - 1)]
-        ].sort(() => .5 - Math.random());
+    regenerate() {
+        const correct = CharacterGenerator.randomCharacter();
+        this.setState({
+            correct: correct,
+            answers: CharacterGenerator.generateAnswers(correct)
+        });
+    }
+
+    handleAnswer(answerId) {
+        const { correct, answers } = this.state;
+        const ansertCharacter = answers[answerId];
+
+        if (correct.romanji == ansertCharacter.romanji) {
+            this.handleCorrect();
+        } else {
+            this.handleFail();
+        }
+
+        this.regenerate();
     }
 
     handleFail() {
