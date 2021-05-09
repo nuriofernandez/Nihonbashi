@@ -24,6 +24,7 @@ class RomanjiToHiragana extends Component {
     regenerate() {
         const correct = CharacterGenerator.randomCharacter();
         this.setState({
+            locked: false,
             correct: correct,
             answers: CharacterGenerator.generateAnswers(correct)
         });
@@ -33,21 +34,27 @@ class RomanjiToHiragana extends Component {
         const { correct, answers } = this.state;
         const answerCharacter = answers[answerId];
 
-        if (correct.romanji == answerCharacter.romanji) {
-            this.handleCorrect();
-        } else {
-            this.handleFail();
-        }
+        this.setState({
+            locked: true
+        });
 
-        this.regenerate();
+        setTimeout(() => {
+            if (correct.romanji == answerCharacter.romanji) {
+                this.handleCorrect();
+            } else {
+                this.handleFail();
+            }
+        }, 500);
     }
 
     handleFail() {
-        alert("NOPE");
+        setTimeout(() => this.setState({
+            locked: false
+        }), 500);
     }
 
     handleCorrect() {
-        alert("ZI");
+        setTimeout(() => this.regenerate(), 1000);
     }
 
     render() {
