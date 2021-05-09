@@ -20,3 +20,13 @@
     background-color: #e2e6ea;
     border-color: #dae0e5;
 }
+
+.Button:disabled {
+    background-color: #a5a6a7;
+    color: #585858;
+}
+
+.Button:disabled:hover {
+    background-color: #a5a6a7;
+    border-color: #a5a6a7;
+}

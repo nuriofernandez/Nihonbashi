@@ -9,7 +9,7 @@ import "./style.css"
 class QuestionDialog extends Component {
 
     render() {
-        const { answers, correct, handleAnswer } = this.props;
+        const { answers, correct, handleAnswer, locked } = this.props;
 
         return (
             <BoxArea>
@@ -18,10 +18,10 @@ class QuestionDialog extends Component {
                         <Preview>{correct}</Preview>
                     </div>
                     <div className="QuestionDialog_answers">
-                        <Button onClick={() => handleAnswer(0)}>{answers[0]}</Button>
-                        <Button onClick={() => handleAnswer(1)}>{answers[1]}</Button>
-                        <Button onClick={() => handleAnswer(2)}>{answers[2]}</Button>
-                        <Button onClick={() => handleAnswer(3)}>{answers[3]}</Button>
+                        <Button disabled={locked} onClick={() => handleAnswer(0)}>{answers[0]}</Button>
+                        <Button disabled={locked} onClick={() => handleAnswer(1)}>{answers[1]}</Button>
+                        <Button disabled={locked} onClick={() => handleAnswer(2)}>{answers[2]}</Button>
+                        <Button disabled={locked} onClick={() => handleAnswer(3)}>{answers[3]}</Button>
                     </div>
                 </div>
             </BoxArea>

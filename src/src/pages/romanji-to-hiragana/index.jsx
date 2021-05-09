@@ -7,6 +7,7 @@ import CharacterGenerator from './generator'
 class RomanjiToHiragana extends Component {
 
     state = {
+        locked: true,
         correct: { hiragana: "...", romanji: "..." },
         answers: [
             { hiragana: "...", romanji: "..." },
@@ -50,7 +51,7 @@ class RomanjiToHiragana extends Component {
     }
 
     render() {
-        const { correct, answers } = this.state;
+        const { correct, answers, locked } = this.state;
         const romanjiAnsewers = [
             answers[0].romanji,
             answers[1].romanji,
@@ -62,6 +63,7 @@ class RomanjiToHiragana extends Component {
                 handleAnswer={(answerId) => this.handleAnswer(answerId)}
                 correct={correct.hiragana}
                 answers={romanjiAnsewers}
+                locked={locked}
             />
         );
     }
