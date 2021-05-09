@@ -30,9 +30,9 @@ class RomanjiToHiragana extends Component {
 
     handleAnswer(answerId) {
         const { correct, answers } = this.state;
-        const ansertCharacter = answers[answerId];
+        const answerCharacter = answers[answerId];
 
-        if (correct.romanji == ansertCharacter.romanji) {
+        if (correct.romanji == answerCharacter.romanji) {
             this.handleCorrect();
         } else {
             this.handleFail();
