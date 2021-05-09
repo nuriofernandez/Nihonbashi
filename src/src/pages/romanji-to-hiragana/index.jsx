@@ -44,17 +44,28 @@ class RomanjiToHiragana extends Component {
             } else {
                 this.handleFail();
             }
-        }, 500);
+        }, 100);
     }
 
     handleFail() {
-        setTimeout(() => this.setState({
-            locked: false
-        }), 500);
+        const { changeBackground } = this.props;
+        changeBackground("#ff0018");
+        setTimeout(() => {
+            this.setState({
+                locked: false
+            })
+            changeBackground("#787c85");
+        }, 1500);
     }
 
     handleCorrect() {
-        setTimeout(() => this.regenerate(), 1000);
+        const { changeBackground } = this.props;
+        changeBackground("#00e835");
+
+        setTimeout(() => {
+            this.regenerate()
+            changeBackground("#787c85");
+        }, 1000);
     }
 
     render() {
