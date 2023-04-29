@@ -8,6 +8,7 @@ class RomanjiToHiragana extends Component {
 
     state = {
         locked: true,
+        playEffect: false,
         correct: { hiragana: "...", romanji: "..." },
         answers: [
             { hiragana: "...", romanji: "..." },
@@ -48,36 +49,42 @@ class RomanjiToHiragana extends Component {
     }
 
     handleFail() {
-        const { changeBackground } = this.props;
-        changeBackground("#ff0018");
+        this.setState({
+            playEffect: true
+        })
         setTimeout(() => {
             this.setState({
-                locked: false
+                locked: false,
+                playEffect: false
             })
-            changeBackground("#787c85");
         }, 1500);
     }
 
     handleCorrect() {
-        const { changeBackground } = this.props;
-        changeBackground("#00e835");
+        this.setState({
+            playEffect: false
+        })
 
         setTimeout(() => {
             this.regenerate()
-            changeBackground("#787c85");
-        }, 1000);
+            this.setState({
+                locked: false,
+                playEffect: false
+            })
+        }, 500);
     }
 
     render() {
-        const { correct, answers, locked } = this.state;
+        const { correct, answers, locked, playEffect } = this.state;
         const romanjiAnsewers = [
             answers[0].romanji,
             answers[1].romanji,
             answers[2].romanji,
             answers[3].romanji
         ]
+
         return (
-            <QuestionDialog
+            <QuestionDialog shake={playEffect}
                 handleAnswer={(answerId) => this.handleAnswer(answerId)}
                 correct={correct.hiragana}
                 answers={romanjiAnsewers}

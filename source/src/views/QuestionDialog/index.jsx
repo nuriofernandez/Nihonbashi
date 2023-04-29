@@ -8,14 +8,15 @@ import "./style.css"
 class QuestionDialog extends Component {
 
     render() {
-        const {answers, correct, handleAnswer, locked} = this.props;
+        const {answers, correct, handleAnswer, locked, shake} = this.props;
 
+        const extra = shake ? " wrong" : "";
         return (
             <div className="QuestionDialog_area">
-                <div className="QuestionDialog_preview">
+                <div className={`QuestionDialog_preview${extra}`}>
                     <Preview>{correct}</Preview>
                 </div>
-                <div className="QuestionDialog_answers">
+                <div className={`QuestionDialog_answers${extra}`}>
                     <Button disabled={locked} onClick={() => handleAnswer(0)}>{answers[0]}</Button>
                     <Button disabled={locked} onClick={() => handleAnswer(1)}>{answers[1]}</Button>
                     <Button disabled={locked} onClick={() => handleAnswer(2)}>{answers[2]}</Button>
