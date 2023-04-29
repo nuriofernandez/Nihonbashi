@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom"
 
 import RomanjiToHiragana from './pages/romanji-to-hiragana';
 import RomanjiToKatakana from "./pages/romanji-to-katakana";
+import Selector from "./pages/selector";
 import RomanjiToHiraganaFull from "./pages/romanji-to-hiragana-full";
 
 class App extends Component {
@@ -14,8 +15,9 @@ class App extends Component {
       <div className="App" >
         <header className="App-header">
           <Routes>
-              <Route path="/" element={ <RomanjiToHiraganaFull /> } />
+              <Route path="/" element={ <Selector /> } />
               <Route path="hiragana" element={ <RomanjiToHiragana /> } />
+              <Route path="full-hiragana" element={ <RomanjiToHiraganaFull /> } />
               <Route path="katakana" element={ <RomanjiToKatakana /> } />
           </Routes>
         </header>

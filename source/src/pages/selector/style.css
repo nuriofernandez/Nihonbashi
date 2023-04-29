@@ -1,0 +1,16 @@
+.selectorgrid {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr); /* create 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* create 2 rows */
+    gap: 20px; /* add gap between grid items */
+}
+
+a {
+    text-decoration: none;
+}
+
+.selectorgrid h1:hover {
+    color: #fff !important;
+}
