@@ -1,2 +1,2 @@
 # Nihonbashi | Japanese learning web app
-![image](https://user-images.githubusercontent.com/8858331/117729539-42bc4e00-b1eb-11eb-842f-41d4ccf69e53.png)
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/8858331/235277498-63939c34-c2a3-4626-8efc-1aca25576dce.png">
