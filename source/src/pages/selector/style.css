@@ -2,9 +2,18 @@
     display: grid;
     place-items: center;
     height: 100vh;
-    grid-template-columns: repeat(2, 1fr); /* create 2 columns */
-    grid-template-rows: repeat(2, 1fr); /* create 2 rows */
-    gap: 20px; /* add gap between grid items */
+    grid-template-columns: auto auto;
+    grid-column-gap: 50px;
+    grid-template-rows: auto auto;
+    grid-row-gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .selectorgrid {
+        height: auto; /* reset height to allow for vertical centering */
+        grid-template-rows: auto; /* reset grid rows to auto */
+        justify-items: center; /* center items horizontally */
+    }
 }
 
 a {
@@ -13,4 +22,8 @@ a {
 
 .selectorgrid h1:hover {
     color: #fff !important;
+}
+
+.selectorgrid h1 {
+    font-size: 12rem;
 }
