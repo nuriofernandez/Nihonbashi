@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Nihonbashi/static/css/main.ac02b0fc.chunk.css",
-    "main.js": "/Nihonbashi/static/js/main.2014c2d0.chunk.js",
-    "main.js.map": "/Nihonbashi/static/js/main.2014c2d0.chunk.js.map",
+    "main.js": "/Nihonbashi/static/js/main.7944cbbc.chunk.js",
+    "main.js.map": "/Nihonbashi/static/js/main.7944cbbc.chunk.js.map",
     "runtime-main.js": "/Nihonbashi/static/js/runtime-main.0d5819ed.js",
     "runtime-main.js.map": "/Nihonbashi/static/js/runtime-main.0d5819ed.js.map",
     "static/js/2.23fe39ad.chunk.js": "/Nihonbashi/static/js/2.23fe39ad.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0d5819ed.js",
     "static/js/2.23fe39ad.chunk.js",
     "static/css/main.ac02b0fc.chunk.css",
-    "static/js/main.2014c2d0.chunk.js"
+    "static/js/main.7944cbbc.chunk.js"
   ]
 }
