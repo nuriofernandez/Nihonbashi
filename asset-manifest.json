@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Nihonbashi/static/css/main.13f91da5.chunk.css",
+    "main.css": "/Nihonbashi/static/css/main.24cac1d5.chunk.css",
     "main.js": "/Nihonbashi/static/js/main.1be3e7f7.chunk.js",
     "main.js.map": "/Nihonbashi/static/js/main.1be3e7f7.chunk.js.map",
     "runtime-main.js": "/Nihonbashi/static/js/runtime-main.49cf8b5c.js",
@@ -10,13 +10,13 @@
     "static/js/3.c1b4f200.chunk.js": "/Nihonbashi/static/js/3.c1b4f200.chunk.js",
     "static/js/3.c1b4f200.chunk.js.map": "/Nihonbashi/static/js/3.c1b4f200.chunk.js.map",
     "index.html": "/Nihonbashi/index.html",
-    "static/css/main.13f91da5.chunk.css.map": "/Nihonbashi/static/css/main.13f91da5.chunk.css.map",
+    "static/css/main.24cac1d5.chunk.css.map": "/Nihonbashi/static/css/main.24cac1d5.chunk.css.map",
     "static/js/2.f604c9af.chunk.js.LICENSE.txt": "/Nihonbashi/static/js/2.f604c9af.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.49cf8b5c.js",
     "static/js/2.f604c9af.chunk.js",
-    "static/css/main.13f91da5.chunk.css",
+    "static/css/main.24cac1d5.chunk.css",
     "static/js/main.1be3e7f7.chunk.js"
   ]
 }
