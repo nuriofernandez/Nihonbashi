@@ -3,12 +3,15 @@ import React, { Component } from 'react'
 import QuestionDialog from '../../views/QuestionDialog'
 
 import CharacterGenerator from './generator'
+import { characters } from './characters-database'
+import Maths from "../../utils/Maths";
 
 class RomanjiToHiragana extends Component {
 
     state = {
         locked: true,
         playEffect: false,
+        known: [],
         correct: { hiragana: "...", romanji: "..." },
         answers: [
             { hiragana: "...", romanji: "..." },
@@ -22,8 +25,23 @@ class RomanjiToHiragana extends Component {
         this.regenerate();
     }
 
+    generateNotKnownCharacter() {
+        const { known } = this.state;
+
+        const unknowns = characters.filter(char => {
+            return !known.some(k => k.hiragana === char.hiragana);
+        });
+
+        if (unknowns.length === 0) {
+            alert("OVER!")
+            unknowns.push({hiragana: "💞️", romanji: "💞"})
+        }
+
+        return unknowns[Maths.randomNumberBetween(0, unknowns.length - 1)];
+    }
+
     regenerate() {
-        const correct = CharacterGenerator.randomCharacter();
+        const correct = this.generateNotKnownCharacter()
         this.setState({
             locked: false,
             correct: correct,
@@ -63,6 +81,12 @@ class RomanjiToHiragana extends Component {
     handleCorrect() {
         this.setState({
             playEffect: false
+        })
+
+        const { correct, known } = this.state;
+        known.push(correct)
+        this.setState({
+            known: known
         })
 
         setTimeout(() => {
