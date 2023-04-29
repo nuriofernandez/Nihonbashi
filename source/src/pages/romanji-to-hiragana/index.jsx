@@ -39,7 +39,7 @@ class RomanjiToHiragana extends Component {
         });
 
         setTimeout(() => {
-            if (correct.romanji == answerCharacter.romanji) {
+            if (correct.romanji === answerCharacter.romanji) {
                 this.handleCorrect();
             } else {
                 this.handleFail();
